@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Like My Website?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 90%;
+      width: 500px;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: translateY(0);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    p {
+      color: #555;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .btn {
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+    
+    .btn:hover::before {
+      width: 100%;
+    }
+    
+    .btn-yes {
+      background: linear-gradient(45deg, #00b09b, #96c93d);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 176, 155, 0.4);
+    }
+    
+    .btn-yes:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(0, 176, 155, 0.5);
+    }
+    
+    .btn-no {
+      background: linear-gradient(45deg, #ff5f6d, #ffc371);
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 95, 109, 0.4);
+      transition: all 0.2s ease;
+    }
+    
+    .btn-no:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(255, 95, 109, 0.5);
+    }
+    
+    .thank-you {
+      display: none;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #00b09b;
+      font-weight: 600;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      user-select: none;
+      animation: fall 3s linear forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .background-shapes div {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: -1;
+    }
+    
+    .shape1 {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 10%;
+      animation: float-shape 15s infinite alternate;
+    }
+    
+    .shape2 {
+      width: 300px;
+      height: 300px;
+      bottom: 10%;
+      right: 10%;
+      animation: float-shape 20s infinite alternate-reverse;
+    }
+    
+    .shape3 {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 50%;
+      animation: float-shape 12s infinite alternate;
+    }
+    
+    @keyframes float-shape {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(100px, 50px) rotate(180deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape1"></div>
+    <div class="shape2"></div>
+    <div class="shape3"></div>
+  </div>
+  
+  <div class="confetti-container" id="confetti-container"></div>
+  
+  <div class="container">
+    <h1>Do You Like My Website?</h1>
+    <p>I'd love to hear your honest feedback! Please select one of the options below.</p>
+    
+    <div class="buttons">
+      <button class="btn btn-yes" id="yes-btn">Yes, I Love It!</button>
+      <button class="btn btn-no" id="no-btn">No, Not Really</button>
+    </div>
+    
+    <div class="thank-you" id="thank-you">
+      Thank you for your positive feedback! 🎉
+    </div>
+  </div>
+
+  <script>
+    // Get DOM elements
+    const noBtn = document.getElementById('no-btn');
+    const yesBtn = document.getElementById('yes-btn');
+    const thankYou = document.getElementById('thank-you');
+    const confettiContainer = document.getElementById('confetti-container');
+    const container = document.querySelector('.container');
+    
+    // No button avoidance behavior
+    noBtn.addEventListener('mouseover', function() {
+      // Calculate new position
+      const maxX = window.innerWidth - noBtn.offsetWidth - 100;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 100;
+      
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+      
+      // Set button position
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = randomX + 'px';
+      noBtn.style.top = randomY + 'px';
+      
+      // Add some rotation for fun
+      const randomRotation = Math.floor(Math.random() * 30) - 15;
+      noBtn.style.transform = `rotate(${randomRotation}deg)`;
+    });
+    
+    // Yes button behavior
+    yesBtn.addEventListener('click', function() {
+      // Hide buttons
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      
+      // Show thank you message
+      thankYou.style.display = 'block';
+      
+      // Create confetti
+      createConfetti();
+      
+      // Create emoji rain
+      createEmojiRain();
+    });
+    
+    // Create confetti function
+    function createConfetti() {
+      const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+      
+      for (let i = 0; i < 150; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'absolute';
+        confetti.style.width = Math.random() * 15 + 5 + 'px';
+        confetti.style.height = Math.random() * 8 + 5 + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.opacity = Math.random() + 0.5;
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        
+        // Set animation
+        confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+        confetti.style.animationDelay = Math.random() * 2 + 's';
+        
+        confettiContainer.appendChild(confetti);
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+    }
+    
+    // Create emoji rain
+    function createEmojiRain() {
+      const emojis = ['🎉', '🎊', '💖', '👍', '🌟', '✨', '😊', '🥳', '👏', '💯'];
+      
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+          const emoji = document.createElement('div');
+          emoji.className = 'emoji';
+          emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          emoji.style.left = Math.random() * 100 + 'vw';
+          emoji.style.animationDuration = Math.random() * 3 + 2 + 's';
+          emoji.style.fontSize = Math.random() * 2 + 1 + 'rem';
+          
+          confettiContainer.appendChild(emoji);
+          
+          // Remove emoji after animation
+          setTimeout(() => {
+            emoji.remove();
+          }, 5000);
+        }, Math.random() * 1500);
+      }
+    }
+    
+    // Make the no button run away on mobile too
+    noBtn.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const maxX = window.innerWidth - noBtn.offsetWidth - 50;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 50;
+      
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+      
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = randomX + 'px';
+      noBtn.style.top = randomY + 'px';
+    });
+    
+    // Add some initial animation to the buttons
+    setTimeout(() => {
+      yesBtn.style.animation = 'pulse 2s infinite';
+    }, 2000);
+  </script>
+</body>
+</html>
