@@ -1,0 +1,201 @@
+<div class="skills-dashboard">
+  <style>
+    .skills-dashboard {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .skills-dashboard h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1a202c;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .skill-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2d3748;
+    }
+    
+    .skill-percentage {
+      font-weight: 600;
+      color: #4a5568;
+      background: #f7fafc;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .skill-bar-bg {
+      height: 10px;
+      background-color: #edf2f7;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      width: 0%;
+      transition: width 1.5s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+    }
+    
+    /* Skill-specific colors */
+    .react-fill { background: linear-gradient(90deg, #61dafb, #00b7ff); }
+    .nextjs-fill { background: linear-gradient(90deg, #000000, #333333); }
+    .nodejs-fill { background: linear-gradient(90deg, #68a063, #3c873a); }
+    .python-fill { background: linear-gradient(90deg, #306998, #ffd43b); }
+    .java-fill { background: linear-gradient(90deg, #f89820, #5382a1); }
+    .javascript-fill { background: linear-gradient(90deg, #f7df1e, #f0db4f); }
+    .mysql-fill { background: linear-gradient(90deg, #00618a, #0f85b3); }
+    .tailwind-fill { background: linear-gradient(90deg, #38b2ac, #0694a2); }
+    
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- <h2>My Technical Skills</h2> -->
+  
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">React</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill react-fill" data-percentage="85"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">Next.js</span>
+        <span class="skill-percentage">80%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill nextjs-fill" data-percentage="80"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">Node.js</span>
+        <span class="skill-percentage">75%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill nodejs-fill" data-percentage="75"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">Python</span>
+        <span class="skill-percentage">70%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill python-fill" data-percentage="70"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">Java</span>
+        <span class="skill-percentage">65%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill java-fill" data-percentage="65"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">JavaScript</span>
+        <span class="skill-percentage">90%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill javascript-fill" data-percentage="90"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">MySQL</span>
+        <span class="skill-percentage">60%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill mysql-fill" data-percentage="60"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <div class="skill-header">
+        <span class="skill-name">Tailwind CSS</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill tailwind-fill" data-percentage="85"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animate skill bars when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add a small delay for visual effect
+      setTimeout(function() {
+        const skillBars = document.querySelectorAll('.skill-bar-fill');
+        skillBars.forEach(bar => {
+          const percentage = bar.getAttribute('data-percentage');
+          bar.style.width = percentage + '%';
+        });
+      }, 300);
+      
+      // Add hover effect for skill cards
+      const skillCards = document.querySelectorAll('.skill-card');
+      skillCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          const fill = this.querySelector('.skill-bar-fill');
+          fill.style.transition = 'width 0.5s ease-in-out';
+          fill.style.width = '0%';
+          
+          setTimeout(() => {
+            fill.style.width = fill.getAttribute('data-percentage') + '%';
+          }, 100);
+        });
+      });
+    });
+  </script>
+</div>

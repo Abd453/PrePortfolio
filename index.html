@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <i data-feather="user"></i>
+        <span>ABDEX</span>
+      </a>
+      <nav class="nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i data-feather="sun" class="icon-sun"></i>
+          <i data-feather="moon" class="icon-moon"></i>
+        </button>
+        <a href="#contact" class="button primary-button">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">Hi, I'm <span class="gradient-text text-p">Abdallah Abdurazak </span></h1>
+            <p class="hero-subtitle">A passionate <span class="role-text"></span></p>
+            <div class="hero-buttons">
+              <a href="#projects" class="button primary-button">
+                View My Work
+                <i data-feather="arrow-right"></i>
+              </a>
+              <a href="#contact" class="button outline-button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="img/avatar.png" alt="Profile" class="profile-image">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Get to know me</h2>
+          <p class="section-description">
+            I'm a passionate developer and designer with over 2 years of experience creating beautiful, functional
+            websites and applications. I believe in the power of thoughtful design and clean code to solve real world
+            problems.
+          </p>
+        </div>
+        <div class="about-content">
+          <!-- <img src="https://via.placeholder.com/400" alt="About Me" class="about-image"> -->
+          <div class="about-text space-y-8 px-4 py-8 bg-gradient-to-r from-green-900 to-green-700 text-white rounded-xl shadow-lg">
+            <div class="about-item">
+                <h3 class="about-item-title text-2xl font-semibold mb-2 border-b-2 border-green-300 pb-1">Background</h3>
+                <p class="about-item-description text-lg leading-relaxed">
+                  With a strong foundation in software development, I have honed my skills in React, Tailwind CSS, and Node.js. 
+                  I have successfully built full-stack applications, including SmartRecruit, a comprehensive recruitment platform. 
+                  My journey includes mastering front-end design and backend integration to deliver seamless user experiences.
+                </p>
+            </div>
+        
+            <div class="about-item">
+                <h3 class="about-item-title text-2xl font-semibold mb-2 border-b-2 border-green-300 pb-1">Philosophy</h3>
+                <p class="about-item-description text-lg leading-relaxed">
+                  I believe that software should not only be functional but also intuitive and visually appealing. 
+                  My approach blends clean code with compelling designs to create impactful digital solutions.
+                  I'm passionate about delivering high-quality software that solves real-world problems.
+                </p>
+            </div>
+        
+            <div class="about-item">
+                <h3 class="about-item-title text-2xl font-semibold mb-2 border-b-2 border-green-300 pb-1">Outside of Work</h3>
+                <p class="about-item-description text-lg leading-relaxed">
+                  Beyond coding, I am dedicated to continuous learning, with interests in machine learning and software engineering. 
+                  I also enjoy hackathons, pushing my problem-solving skills, and exploring new technologies to stay ahead in the industry.
+                </p>
+            </div>
+             <!-- Download CV Button -->
+             <div class="download-button text-center mt-8">
+              <a href="./Resume.pdf" download="Resume.pdf" class="button primary-button">
+                  Download My CV
+              </a>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag skills-tag">Skills</span>
+          <h2 class="section-title">My Expertise</h2>
+          <p class="section-description">
+            I've honed my skills across various disciplines to deliver comprehensive solutions.
+          </p>
+        </div>
+        <iframe src="skills-dashboard.html" style="width: 100%; border: none;" onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px';"></iframe>
+
+        <!-- <div id="skills-container"></div> -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag projects-tag">Projects</span>
+          <h2 class="section-title">My Recent Work</h2>
+          <p class="section-description">
+            Here are some of the projects I've worked on recently.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card" id="nileedge-project">
+            <div class="project-image-container">
+              <img src="img/proj.png" alt="Project 1" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">NileEdge Website</h3>
+              <p class="project-description">
+                A startup developing cutting-edge solutions, including advanced websites, AI-driven automation, and innovative application development, to transform educational management with efficient student registration, course enrollment, instructor assignment, status tracking, grading, and administrative operations.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://nileedge-profile-for-vercel.vercel.app/#" class="button small outline-button">View Project</a>
+                <a href="https://github.com/Abd453" class="button small ghost-button">
+                  <i data-feather="github"></i>
+                  Code 
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="/img/student.png" alt="Project 2" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Student Management System</h3>
+              <p class="project-description">
+                A comprehensive student management system that enables registration, course enrollment, instructor assignment, 
+                status and result tracking, grading, and administrative functions for efficient educational operations.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Java</span>
+                <span class="project-tag">Servlet</span>
+                <span class="project-tag">JSP</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="button small outline-button">View Project</a>
+                <a href="https://github.com/Abd453/StudentRegistrationApp" class="button small ghost-button">
+                  <i data-feather="github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="/img/linkedin.png" alt="Project 3" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">LinkedIn-Inspired Desktop Layout</h3>
+              <p class="project-description">
+               lA startup leveraging Figma to design and prototype cutting-edge, interactive LinkedIn-inspired web and mobile applications, featuring advanced UI/UX for seamless user experiences, AI-driven automation, and real-time collaboration for efficient development.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">UI/UX</span>
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">Prototyping</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.figma.com/design/khx3QFkPh3jN4AHuoabpOO/LINKEDIN-COPY?t=rQcEYN4DSS3lzVCL-0" class="button small outline-button">View Project</a>
+                <a href="https://github.com/Abd453" class="button small ghost-button">
+                  <i data-feather="github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="/img/leetcode.png" alt="Project 2" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">LeetCode</h3>
+              <p class="project-description">
+                A passionate software developer with a strong foundation in full-stack development. I thrive on building impactful projects like LetCode, a platform designed to enhance coding skills and prepare developers for technical challenges.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Express</span>
+                <span class="project-tag">Database</span>
+                <span class="project-tag">Drizzle</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="button small outline-button">View Project</a>
+                <a href="https://github.com/Abd453/Leetcode" class="button small ghost-button">
+                  <i data-feather="github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="/img/car.png" alt="Project 2" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">MottowSwift</h3>
+              <p class="project-description">
+                dynamic platform for buying and selling cars, connecting sellers with 
+                buyers for a seamless automotive marketplace experience.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Javascript</span>
+                <span class="project-tag">JSON</span>
+                
+              </div>
+              <div class="project-links">
+                <a href="#" class="button small outline-button">View Project</a>
+                <a href="https://github.com/Abd453/mottoswift" class="button small ghost-button">
+                  <i data-feather="github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="/img/smart.png" alt="Project 2" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Smart Recruit</h3>
+              <p class="project-description">
+                SmartRecruit is an AI-powered recruitment platform that streamlines the hiring process, connecting top talent with the right opportunities.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Tailwind</span>
+                <span class="project-tag">TypeOrm</span>
+                <span class="project-tag">PostgresQL</span>
+                <span class="project-tag">Tailwind</span>
+          
+              </div>
+              <div class="project-links">
+                <a href="#" class="button small outline-button">View Project</a>
+                <a href="https://github.com/Abd453/Smart-Recruit2024" class="button small ghost-button">
+                  <i data-feather="github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="projects-action">
+          <a href="#" class="button outline-button">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag testimonials-tag">Testimonials</span>
+          <h2 class="section-title">What People Say</h2>
+          <p class="section-description">
+            Don't just take my word for it - here's what others have to say about working with me.
+          </p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="img/client.png" alt="Client 1" class="testimonial-image">
+              <div class="testimonial-author">
+                <h3 class="testimonial-name">Brad Traverse</h3>
+                <p class="testimonial-role">Team Lead, IE NETWOEKS SOlUTIONS</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Working with Abdallah was an absolute pleasure. He understood our vision from the start
+              and delivered a product that exceeded our expectations. His attention to detail and creative
+              problem-solving made all the difference."
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="img/client1.png" alt="Client 2" class="testimonial-image">
+              <div class="testimonial-author">
+                <h3 class="testimonial-name">David Han</h3>
+                <p class="testimonial-role">Marketing Director, Company Name</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "I've worked with many designers and developers over the years, but Abdallah stands out for
+              his ability to blend creativity with technical expertise. he is not only delivered a beautiful
+              website but also ensured it was optimized for performance and user experience."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag contact-tag">Contact</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">
+            Have a project in mind or just want to say hello? I'd love to hear from you.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-form-container">
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-input" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-textarea" placeholder="Enter your message"></textarea>
+              </div>
+              <button type="submit" class="button primary-button contact-button">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <div class="contact-info-header">
+              <h3 class="contact-info-title">Contact Information</h3>
+              <p class="contact-info-subtitle">Feel free to reach out through any of the following channels:</p>
+            </div>
+            <div class="contact-info-items">
+              <div class="contact-info-item">
+                <i data-feather="mail" class="contact-icon mail-icon"></i>
+                <p>AbdallahAb4595@gmail.com</p>
+              </div>
+              <div class="contact-info-item">
+                <i data-feather="linkedin" class="contact-icon linkedin-icon"></i>
+                <p>linkedin.com/in/Abdallah Abdurazak</p>
+              </div>
+              <div class="contact-info-item">
+                <i data-feather="github" class="contact-icon github-icon"></i>
+                <p>github.com/Abd453</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p class="copyright">© 2025 <span>Abdallah Abdurazak</span>. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/Abd453/Leetcode" class="social-link github-link">
+          <i data-feather="github"></i>
+          <span class="sr-only">Github</span>
+        </a>
+        <a href="https://www.linkedin.com/in/abdallah-abdurazak-728aa7278/" class="social-link linkedin-link">
+          <i data-feather="linkedin"></i>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="mailto:AbdallahAb4595@gmail.com" class="social-link mail-link">
+          <i data-feather="mail"></i>
+          <span class="sr-only">olto:AbdallahAb4595@gmail.com" class="social-link mail-link">
+          <i data-feather="mail"></i>
+          <span class="sr-only">Email</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Load skills dashboard
+    fetch('skills-dashboard.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('skills-container').innerHTML = data;
+        if (typeof feather !== 'undefined') {
+          feather.replace();
+        }
+      })
+      .catch(error => {
+        console.error('Error loading skills section:', error);
+      });
+
+    // Hero section animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sequential fade-in for hero elements
+      const heroTitle = document.querySelector('.hero-title');
+      const heroSubtitle = document.querySelector('.hero-subtitle');
+      const heroButtons = document.querySelector('.hero-buttons');
+
+      heroTitle.style.opacity = '0';
+      heroSubtitle.style.opacity = '0';
+      heroButtons.style.opacity = '0';
+
+      setTimeout(() => {
+        heroTitle.style.transition = 'opacity 1s ease';
+        heroTitle.style.opacity = '1';
+      }, 500);
+
+      setTimeout(() => {
+        heroSubtitle.style.transition = 'opacity 1s ease';
+        heroSubtitle.style.opacity = '1';
+      }, 1500);
+
+      setTimeout(() => {
+        heroButtons.style.transition = 'opacity 1s ease';
+        heroButtons.style.opacity = '1';
+      }, 2500);
+
+      // Typewriter effect for roles
+      const roles = [
+        'Front End Dev',
+        'Back End Dev',
+        'Competitive Programmer',
+        'UI/UX Designer',
+        'Fullstack Developer'
+      ];
+      const roleText = document.querySelector('.role-text');
+      let roleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let currentRole = '';
+
+      function type() {
+        if (isDeleting) {
+          currentRole = roles[roleIndex].substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          currentRole = roles[roleIndex].substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        roleText.textContent = currentRole;
+
+        if (!isDeleting && charIndex === roles[roleIndex].length) {
+          isDeleting = true;
+          setTimeout(type, 1500); // Pause before deleting
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(type, 500); // Pause before typing next role
+        } else {
+          setTimeout(type, isDeleting ? 50 : 100); // Typing/deleting speed
+        }
+      }
+
+      // Start typewriter effect after subtitle fade-in
+      setTimeout(type, 2000);
+    });
+  </script>
+
+  <script>
+    // Load skills dashboard
+    fetch('skills-dashboard.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('skills-container').innerHTML = data;
+        if (typeof feather !== 'undefined') {
+          feather.replace(); // Ensure feather icons work
+        }
+      })
+      .catch(error => {
+        console.error('Error loading skills section:', error);
+      });
+  </script>
+  <script src="game-popup.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
